@@ -19,10 +19,65 @@
             <img src="/source/stars.png" id="stars">
             <img src="/source/moon.png" id="moon">
             <img src="/source/mountains_behind.png" id="mountains_behind">
-            <h2 id="text">
-                Moon Light
-            </h2>
+            <h2 id="text">Moon Light</h2>
+            <a href="#sec" id="btn">Explore</a>
             <img src="/source/mountains_front.png" id="mountains_front">
         </section>
+        <div class="sec" id="sec">
+            <h2>Parallax Scrolling</h2>
+            <p>I have been programming (not "coding", how awfully, you kids these days, say) powerful DOS programs in assembly since 1983 and I don't know any of your hipster node.js bullshit that makes you look "cool". Seriously, get that shit outta here. You're just making yourself look like clowns typing some incomprehensible sugarified as fuck bullshit, half of which, in fact, is written by your brand new and shiny Electron-based text editor you enjoy every second of, and the other half of which, is copied from fucking StackOverflow. Look, we didn't even fucking have that and we did shit, and you suckers can't even spend a single second without it. You spend hours looking for a gorgeous and flawless color scheme for it so your so-called "coding" is always a pleasure for you. We didn't even fucking have IntelliSense or linters, you fucking spoiled little brats. Stop making programming look like a joke and go back to your parents' basements, where you are truly who you are.
+
+Burn HTML. Burn CSS. Burn JavaScript. Burn PHP. Burn the fucking web.
+
+I bet you won't even be able to fucking stand writing some C for an embedded system without crying to your mommy
+
+... about how there are so fucking many compilers errors and everything went not as you expected.
+
+You call C fucking unsafe? Look at JavaScript. Look at PHP. They let you pull out insane bullshit while you don't even notice. And then you spend hours trying to find out what you did wrong.
+
+C is actually useful.
+
+Everything you fucking see on your screen has atleast 60% of C or C++ in it.
+
+Oh, what is JavaScript useful for? Rolling a stupid fucking dropdown menu or a sexy as fuck banner animation?
+
+I know what you're thinking.
+
+And by the way, CSS is fucking stupid.
+
+It makes no sense half and a quarter of the time.
+
+Web development is gross.
+
+And you know it.
+
+You try to compensate it by making dumb frameworks that require ages to load because they weigh over 16MiB for no fucking reason, but it is no use.
+
+Oh, I wonder why none of you said anything yet.
+
+Probably because I just roasted you all hard and you can't deny it.</p>
+        </div>
+        <script>
+            let stars =  document.getElementById('stars');
+            let moon =  document.getElementById('moon');
+            let mountainis_behind =  document.getElementById('mountains_behind');
+            let text =  document.getElementById('text');
+            let btn =  document.getElementById('btn');
+            let mountains_front =  document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+
+            window.addEventListener('scroll',function(){
+                let value=window.scrollY;
+                stars.style.left = value*0.25+'px';
+                moon.style.top = value*1.05+'px';
+                mountainis_behind.style.top= value*0.05+'px';
+                mountains_front.style.top=value*0+'px';
+                text.style.marginRight=value*4+'px';
+                text.style.marginTop=value*1.5+'px';
+                btn.style.marginTop=value*1.5+'px';
+                header.style.top = value*0.5+'px';
+            })
+        </script>
     </body>
 </html>
